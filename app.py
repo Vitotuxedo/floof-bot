@@ -34,7 +34,7 @@ def get_res(text):
   else:
     for breed in breeds:
       if breed in text:
-        list = [get_random(breed)]
+        lis = [get_random(breed)]
   return random.choice(lis)
 
 # Send the chosen message to the chat
