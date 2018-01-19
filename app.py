@@ -32,9 +32,18 @@ def get_res(text):
   if 'roll tide' in text:
     lis = ['Roll Tide!', 'RMFT!', 'RTR!', 'Roll Tide Roll!']
   else:
+    switch = ''
     for breed in breeds:
       if breed in text:
-        lis = [get_random(breed)]
+        switch = breed
+        subbreeds = (json.loads(urlopen('https://dog.ceo/api/' + breed + '/list').read()))['message']
+        for subbreed in subbreeds:
+          if subbreed in text:
+            switch = subbreed
+        if switch != '':
+          lis = [get_random(breed, switch)]
+        else:
+          lis = [get_random(breed)]
   return random.choice(lis)
 
 # Send the chosen message to the chat
@@ -48,16 +57,19 @@ def send_message(msg):
   json = urlopen(request).read().decode()
   
 # Get random dog or cat
-def get_random(switch):
+def get_random(switch, subswitch = ''):
   if (switch == 'dog'):
     link = 'https://dog.ceo/api/breeds/image/random'
     key = 'message'
   elif (switch == 'cat'):
     link = 'http://random.cat/meow'
     key = 'file'
-  else: # breed
-    link = 'https://dog.ceo/api/breed/' + switch + '/images/random'
-    key = 'message'
+  else:
+    if subswitch == '': # just breed
+      link = 'https://dog.ceo/api/breed/' + switch + '/images/random'
+    else: # sub-breed
+      link = 'https://dog.ceo/api/breed/' + switch + '/' + subswitch + '/images/random'
+      key = 'message'
   html = urlopen(link).read()
   data = json.loads(html)
   reto = data[key]
