@@ -69,7 +69,7 @@ def get_random(switch, subswitch = ''):
       link = 'https://dog.ceo/api/breed/' + switch + '/images/random'
     else: # sub-breed
       link = 'https://dog.ceo/api/breed/' + switch + '/' + subswitch + '/images/random'
-      key = 'message'
+    key = 'message'
   html = urlopen(link).read()
   data = json.loads(html)
   reto = data[key]
