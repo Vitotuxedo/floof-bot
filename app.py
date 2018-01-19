@@ -1,7 +1,7 @@
-import os
-import sys
 import json
+import os
 import random
+import sys
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
