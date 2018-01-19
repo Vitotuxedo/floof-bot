@@ -16,7 +16,7 @@ def webhook():
   log('Recieved {}'.format(data))
   
   msg = ''
-  if data['name'] != 'Thot Bot':
+  if data['name'] != os.getenv('BOT_NAME'):
     msg = get_res(data['text'].lower())
   send_message(msg)
   return "ok", 200
