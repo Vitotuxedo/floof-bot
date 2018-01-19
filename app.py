@@ -36,7 +36,9 @@ def get_res(text):
     for breed in breeds:
       if breed in text:
         switch = ''
-        subbreeds = (json.loads(urlopen('https://dog.ceo/api/' + breed + '/list').read()))['message']
+        subbreeds = urlopen('https://dog.ceo/api/' + breed + '/list').read()
+        if subbreeds != 'Not Found':
+          subbreeds = (json.loads(subbreeds))['message']
         for subbreed in subbreeds:
           if subbreed in text:
             switch = subbreed
