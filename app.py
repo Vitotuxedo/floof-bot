@@ -49,13 +49,15 @@ def send_message(msg):
   
 # Get random dog or cat
 def get_random(switch):
-  if ()
   if (switch == 'dog'):
     link = 'https://dog.ceo/api/breeds/image/random'
     key = 'message'
   elif (switch == 'cat'):
     link = 'http://random.cat/meow'
     key = 'file'
+  else: # breed
+    link = 'https://dog.ceo/api/breed/' + switch + '/images/random'
+    key = 'message'
   html = urlopen(link).read()
   data = json.loads(html)
   reto = data[key]
