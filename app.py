@@ -31,6 +31,8 @@ def get_res(text):
     lis = [get_random('cat')]
   if 'roll tide' in text:
     lis = ['Roll Tide!', 'RMFT!', 'RTR!', 'Roll Tide Roll!']
+  if 'pitbull' in text or 'pit bull' in text:
+    lis = ['https://www.thefamouspeople.com/profiles/images/og-pitbull-6049.jpg']
   else:
     switch = ''
     for breed in breeds:
