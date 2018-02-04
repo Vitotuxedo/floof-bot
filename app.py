@@ -25,14 +25,20 @@ def webhook():
 def get_res(text):
   lis = []
   breeds = (json.loads(urlopen('https://dog.ceo/api/breeds/list').read()))['message']
-  if 'dog' in text or 'good boy' in text:
+  if 'dog' in text or 'pupper' in text or 'good boy' in text:
     lis = [get_random('dog')]
+  if 'cloud' in text:
+    return get_res('samoyed')
   if 'cat' in text:
     lis = [get_random('cat')]
   if 'roll tide' in text:
     lis = ['Roll Tide!', 'RMFT!', 'RTR!', 'Roll Tide Roll!']
   if 'pitbull' in text or 'pit bull' in text:
     lis = ['https://www.thefamouspeople.com/profiles/images/og-pitbull-6049.jpg']
+  if 'floof' in text:
+    return get_res(random.choice(['leonburger', 'samoyed', 'stbernard']))
+  if 'mop' in text:
+    return get_res('komondor')
   else:
     switch = ''
     for breed in breeds:
