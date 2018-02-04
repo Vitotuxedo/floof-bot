@@ -36,7 +36,7 @@ def get_res(text):
   if 'pitbull' in text or 'pit bull' in text:
     lis = ['https://www.thefamouspeople.com/profiles/images/og-pitbull-6049.jpg']
   if 'floof' in text:
-    return get_res(random.choice(['leonburger', 'samoyed', 'stbernard']))
+    return get_res(random.choice(['leonberger', 'samoyed', 'stbernard']))
   if 'mop' in text:
     return get_res('komondor')
   else:
