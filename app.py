@@ -29,7 +29,7 @@ def get_res(text):
     lis = [get_random('dog')]
   if 'cloud' in text:
     return get_res('samoyed')
-  if 'cat' in text:
+  if 'cat' in text or 'meow' in text:
     lis = [get_random('cat')]
   if 'roll tide' in text:
     lis = ['Roll Tide!', 'RMFT!', 'RTR!', 'Roll Tide Roll!']
