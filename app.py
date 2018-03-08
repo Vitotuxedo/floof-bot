@@ -95,7 +95,7 @@ def get_cat():
   url = 'http://thecatapi.com/api/images/get?format=xml&results_per_page=1&type=' + random.choice(['jpg', 'gif', 'png'])
   r = requests.get(url)
   doc = xmltodict.parse(r.content)
-  return doc['response']['data']['images']['image']['url']['#text']
+  return str(doc['response']['data']['images']['image']['url'])
 
 # Debug
 def log(msg):
