@@ -4,6 +4,7 @@ import random
 import sys
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+import xmltodict
 
 from flask import Flask, request
 
@@ -30,7 +31,7 @@ def get_res(text):
   if 'cloud' in text or 'polar bear' in text:
     return get_res('samoyed')
   if 'cat' in text or 'meow' in text:
-    lis = [get_random('cat')]
+    lis = [get_cat()] # [get_random('cat')]
   if 'roll tide' in text:
     lis = ['Roll Tide!', 'RMFT!', 'RTR!', 'Roll Tide Roll!']
   if 'pitbull' in text or 'pit bull' in text:
@@ -88,6 +89,13 @@ def get_random(switch, subswitch = ''):
   else:
     return get_random(link)
   
+# Get random cat
+def get_cat():
+  url = 'http://thecatapi.com/api/images/get?format=xml&results_per_page=1&type=' + random.choice(['jpg', 'gif', 'png'])
+  with open(url) as fd:
+    doc = xmltodict.parse(fd.read())
+  return doc['response']['data']['images']['image']['url'][#text]
+
 # Debug
 def log(msg):
   print(str(msg))
