@@ -27,7 +27,7 @@ def webhook():
 def get_res(text):
   lis = []
   breeds = (json.loads(urlopen('https://dog.ceo/api/breeds/list').read()))['message']
-  if 'dog' in text or 'pupper' in text or 'good boy' in text:
+  if 'dog' in text or 'pup' in text or 'good boy' in text or 'woof' in text:
     lis = [get_random('dog')]
   if 'cloud' in text or 'polar bear' in text:
     return get_res('samoyed')
