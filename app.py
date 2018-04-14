@@ -80,7 +80,7 @@ def get_random(switch, subswitch = ''):
     else: # sub-breed
       link = 'https://dog.ceo/api/breed/' + switch + '/' + subswitch + '/images/random'
     key = 'message'
-  html = urlopen(link).read()
+  html = requests.get(link).text
   data = json.loads(html)
   reto = data[key]
   # if (switch == 'cat' or switch == 'dog' switch == ''):
