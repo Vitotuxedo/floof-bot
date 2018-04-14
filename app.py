@@ -64,7 +64,7 @@ def send_message(msg):
           'text'   : msg,
          }
   request = Request(url, urlencode(data).encode())
-  json = requests.get(request).text.decode()
+  # json = requests.get(request).text.decode()
   
 # Get random dog or cat
 def get_random(switch, subswitch = ''):
