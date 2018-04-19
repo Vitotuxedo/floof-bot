@@ -33,8 +33,6 @@ def get_res(text):
     return get_res('samoyed')
   if 'cat' in text or 'meow' in text:
     lis = [get_cat()] # [get_random('cat')]
-  if 'roll tide' in text:
-    lis = ['Roll Tide!', 'RMFT!', 'RTR!', 'Roll Tide Roll!']
   if 'pitbull' in text or 'pit bull' in text:
     lis = ['https://www.thefamouspeople.com/profiles/images/og-pitbull-6049.jpg']
   if 'floof' in text:
