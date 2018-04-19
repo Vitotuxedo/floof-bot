@@ -60,8 +60,6 @@ def send_message(msg):
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
          }
-  # request = Request(url, urlencode(data).encode())
-  # json = urlopen(request).read().decode()
   requests.post(url, data)
   
 # Get random dog or cat
