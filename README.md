@@ -5,4 +5,5 @@ A GroupMe chatbot that sends pictures of cute, fluffy dogs and cats! Uses the [d
 There are a couple steps involved here.
 1. Create a bot user in GroupMe.
 2. Deploy to Heroku and add a config var.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
