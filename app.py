@@ -2,11 +2,10 @@ import json
 import os
 import random
 import sys
-from urllib.parse import urlencode
-from urllib.request import Request, urlopen
-import xmltodict
+
 import requests
 
+import xmltodict
 from flask import Flask, request
 
 app = Flask(__name__)
