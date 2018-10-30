@@ -26,6 +26,15 @@ def webhook():
 def get_res(text):
   if 'mad' in text:
     return 'Bon, calm down!'
+  
+# Send the chosen message to the chat
+def send_message(msg):
+  url  = 'https://api.groupme.com/v3/bots/post'
+  data = {
+          'bot_id' : os.getenv('GROUPME_BOT_ID'),
+          'text'   : msg,
+         }
+  requests.post(url, data)
 
 # Debug
 def log(msg):
