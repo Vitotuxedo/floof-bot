@@ -25,7 +25,7 @@ def webhook():
 # Choose response based on keywords
 def get_res(text):
   if 'mad' in text:
-    return 'Jonathan, calm down!'
+    return 'Bon, calm down!'
 
 # Debug
 def log(msg):
